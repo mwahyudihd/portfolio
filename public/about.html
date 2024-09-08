@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html x-data="{ darkMode: false }" lang="en" :class="darkMode && 'dark'" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <link rel="stylesheet" href="../dist/js/script.css">
+</head>
+<body x-data="setVisible" :class="popUp && 'overflow-hidden'" class="bg-primary m-0 p-0 min-h-screen flex flex-col size-full selection:bg-dark dark:selection:bg-primary dark:selection:text-dark selection:text-primary dark:bg-dark font-poppins transition ease-in-out duration-500 max-h-full">
+    <header data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" class="nav__container" >
+        <nav x-data="navbar" class="flex size-full justify-between items-center">
+            <h1 class="text-xl mr-10 md:text-2xl lg:text-4xl mx-2 my-3 font-bold"><a href="#"><span class="scale-50"><</span>W<span>h</span><span>y</span><span class="scale-75">></span></a></h1>
+            <ul :class="navOn ? 'mb-0' : 'mb-[2000rem]'" class="md:h-full flex transition-all duration-1000 ease-in-out text-2xl md:mb-0 h-[200rem] md:w-auto w-full left-0 md:left-auto md:flex-row flex-col mt-[20rem] md:mt-0 justify-center md:justify-around items-center bg-primary backdrop-blur-xl bg-opacity-60 dark:backdrop-blur-xl dark:md:backdrop-blur-none dark:md:bg-opacity-100 dark:bg-opacity-60 absolute md:backdrop-blur-none md:bg-opacity-100 dark:text-white z-[7000] md:bg-transparent md:dark:bg-transparent dark:bg-dark text-dark md:flex rounded-lg md:static">
+                <div @click="navOn = ! navOn" class="md:hidden w-full pt-[20rem] relative">
+                    <button class="absolute ml-5 right-2 bottom-0 hover:rotate-180 transition-all ease-in-out duration-700"><img class="size-[50px]" :src="!darkMode ? '../dist/img/close-light.svg' : '../dist/img/close-dark.svg'"></button>
+                </div>
+                <img id="nav-person-ico" class="pt-10 w-40 md:hidden rounded-full" src="https://blush.design/api/download?shareUri=wEiSOuKG_50B5sWv&c=Skin_0%7Eedb98a&bg=ffb2c9&w=800&h=800&fm=png">
+                <template x-for="(path, index) of aboutNav" :key="index">
+                    <li class="nav__list" @click="navOn = ! navOn"><a :href="path.url" x-text="path.title"></a></li>
+                </template>
+            </ul>
+            </div>
+            <div class="flex" x-html="toggle"></div>
+        </nav>
+    </header>
+    <main x-data="main" class="max-w-full w-full">
+        <div id="content" class="h-10 lg:h-12"></div>
+        <section class="container rounded-xl shadow-md py-6 px-6 max-w-full flex justify-center items-center lg:justify-start flex-wrap lg:flex-nowrap bg-nav bg-opacity-75 dark:bg-gradient-to-tl dark:from-deepSea dark:via-darkCard dark:to-primary">
+            <div class="container max-w-max mx-auto flex items-center justify-center relative group py-4 lg:pl-10">
+                <div class="rounded-xl bg-[#121213] cursor-zoom-in md:size-[12.5rem] lg:size-[15.5rem] group-hover:-rotate-45 group group overflow-hidden border-[3px] size-40 dark:border-darkCard border-primary z-40 transition duration-700 ease-in-out">
+                    <div class="z-10 group-hover:rounded-full group-hover:scale-[1.28] ease-in-out duration-700 group-hover:rotate-45 bg-[url('https://github.com/user-attachments/assets/d27034cc-4ab7-49ee-bb50-0800d7df519e')] bg-cover size-full md:px-2">
+                    </div>
+                </div>
+                <div class="dark:bg-primary bg-deepSea dark:group-hover:bg-deepSea  group-hover:bg-primary size-40 md:size-[12.5rem] lg:size-[15.5rem] group-hover:-rotate-[25deg] transition duration-1000 delay-100 ease-in-out z-30 rounded-xl absolute"></div>
+                <div class="dark:bg-second bg-darkCard dark:group-hover:bg-darkCard group-hover:bg-second  size-40 md:size-[12.5rem] lg:size-[15.5rem] group-hover:-rotate-[15deg] transition duration-1000 delay-200 ease-in-out rounded-xl z-20 absolute"></div>
+                <div class="dark:bg-primary bg-deepSea dark:group-hover:bg-deepSea  group-hover:bg-primary size-40 md:size-[12.5rem] lg:size-[15.5rem] group-hover:-rotate-[5deg] transition duration-1000 delay-300 ease-in-out z-10 rounded-xl absolute"></div>
+                <div class="dark:bg-second bg-darkCard dark:group-hover:bg-darkCard group-hover:bg-second  size-40 md:size-[12.5rem] lg:size-[15.5rem] group-hover:-rotate-0 transition duration-1000 delay-200 ease-in-out rounded-xl z-0 absolute"></div>
+            </div>
+            <div class="text-justify p-5 px-7 text-dark dark:text-primary rounded-lg w-full mt-2 lg:mt-0 lg:h-[15rem] lg:ml-4">
+                <h1 class="text-base sm:text-lg font-bold lg:text-2xl">About Me?</h1>
+                <p class="text-sm sm:text-base lg:text-lg">
+                    A second-year informatics student passionate about software development, focusing on Full-stack web development and mobile apps with Flutter. I thrive on challenges that enhance my skills and keep me up-to-date in the ever-evolving tech landscape.    
+                </p>
+                <h1 class="text-base sm:text-lg font-bold lg:text-2xl pt-4">Education :</h1>
+                <ul class="pt-4">
+                    <li class="flex lg:justify-between font-semibold sm:justify-around flex-wrap text-sm md:text-base">Universitas Logistik dan Binis Internasional <span>(Informatic Engineering)</span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="w-full my-4 text-dark rounded-lg md:p-4 flex flex-wrap justify-between lg:flex-nowrap">
+            <div class="w-full md:p-5 lg:w-1/2 border shadow-md dark:bg-darkCard rounded-lg bg-nav bg-opacity-75 p-4 lg:mx-1">
+                <h1 class="font-bold text-base md:text-lg lg:text-xl xl:text-2xl dark:text-primary">Tech Stack :</h1>
+                <div class="h-40 md:h-52 lg:h-60">
+                    <ul class="flex group mx-1 flex-wrap my-4" x-data="skills">
+                        <template x-for="stack of tech">
+                            <li :class="stack.delay && `delay-${stack.delay}`" class="border bg-gradient-to-tl my-2 md:my-3 from-dark via-second to-darkCard rounded-full group-hover:mx-2 lg:group-hover:mx-3 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="stack.image" alt=""></li>
+                        </template>
+                    </ul>
+                </div>
+                <hr>
+                <h1 class="font-bold text-base md:text-lg lg:text-xl xl:text-2xl dark:text-primary">Programming Languages :</h1>
+                <ul class="flex group my-3 flex-wrap mx-1" x-data="skills">
+                    <template x-for="skill of skillAssets">
+                        <li :class="skill.delay && `delay-${skill.delay}`" class="border bg-gradient-to-tl from-dark via-second to-darkCard my-2 rounded-full group-hover:mx-2 md:group-hover:mx-3 lg:group-hover:mx-4 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="skill.image" alt=""></li>
+                    </template>
+                </ul>
+            </div>
+            <div class="container bg-nav shadow-lg bg-opacity-75 dark:bg-gradient-to-t dark:from-deepSea dark:via-primary dark:to-darkCard border rounded-lg p-4 lg:w-1/2 mt-3 lg:mt-0 xl:mx-1 mx-auto w-full" x-data="skills" x-init="renderChart">
+                <div class="bg-gradient-to-b from-primary p-4 to-darkCard rounded-xl">
+                    <h1 class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-center">Stats</h1>
+                    <hr class="border-nav">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+        </section>
+        <section data-aos="fade-down" id="quick-contact" class="h-full lg:h-96 my-3 py-8 container size-full max-w-full dark:bg-gradient-to-tl dark:from-deepSea dark:via-darkCard dark:to-primary bg-nav rounded-xl bg-opacity-70 backdrop-blur-lg" x-html="quickContact">
+        </section>
+    </main>
+    <div x-data="popUpComponent">
+        <div id="alert-contain" x-data="msg" x-html="messagePopUp"></div>
+    </div>
+    <footer data-aos="fade-up" data-aos-anchor-placement="center-bottom" x-data="footer" class="container min-h-full size-full mt-auto w-full max-w-full bg-nav dark:bg-dark dark:border rounded-xl bg-opacity-70 backdrop-blur-lg">
+        <div class="h-full w-auto flex flex-wrap justify-around py-9 px-2 text-sm md:text-base text-dark dark:text-primary">
+            <h1 class="md:font-medium lg:font-semibold">&copy; 2024 M Wahyudi HD</h1>
+            <ul id="contact" class="flex">
+                <template x-for="list of link">
+                    <li class="mx-1 md:mx-3">
+                        <a :href="list.url" class="group relative">
+                            <div class="fill__container">
+                                <div class="group-hover:scale-y-100 fill__item"></div>
+                            </div>
+                            <tag x-html="list.svg"></tag>
+                        </a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </footer>
+    <script src="../dist/js/script.js"></script>
+</body>
+</html>

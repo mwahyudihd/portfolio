@@ -1,0 +1,35 @@
+:root {
+    --danger: #990000;
+    --warning: #D4D925;
+    --clear: #EEEEEE;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width: 105vh;
+    height: 120vh;
+    @media (min-width: 572px) {
+        width: 225vh;
+        font-size: xx-large;
+    }
+    font-size: larger;
+    background-color: var(--danger);
+}
+h1{
+    display: flex;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 15px;
+    border-radius: 15px;
+    background-color: var(--danger);
+    animation: flipflap 300ms infinite 500ms alternate;
+}
+@keyframes flipflap{
+    0% { color: var(--warning); }
+    50% { color: var(--clear); }
+    100% { color: var(--danger);}
+}

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .nav__list {
+        @apply md:size-full hover:scale-110 md:hover:scale-100 text-xl p-1 md:hover:bg-primary dark:hover:bg-darkCard md:rounded-xl md:hover:no-underline md:h-full md:my-3 hover:underline transition duration-700 ease-in-out my-4 md:mx-2;
+    }
+    .input__box {
+        @apply border rounded-xl dark:focus:ring-1 dark:focus:ring-primary bg-white border-second dark:bg-dark dark:text-primary p-3 mb-3 w-full max-w-full;
+    }
+    .textarea__input {
+        @apply w-full focus:ring-1 bg-white border-second dark:focus:ring-1 dark:focus:ring-primary focus:ring-darkCard dark:bg-dark dark:text-primary rounded-xl border max-w-full mx-0 h-40 px-3 py-2;
+    }
+    .primary__button {
+        @apply dark:bg-primary bg-dark text-primary dark:bg-opacity-70 border-white dark:backdrop-blur-lg font-semibold backdrop-blur-lg bg-opacity-65 dark:text-dark dark:hover:bg-primary hover:bg-dark hover:text-primary dark:hover:border-primary hover:scale-110 z-20 transition duration-500 dark:hover:text-dark border rounded-xl py-2;
+    }
+    .icon__button {
+        @apply px-1 transition duration-500 ease-in-out [&>img:first-child]:size-[1.3rem] ;
+    }
+    .fill__container {
+        @apply absolute border md:scale-125 border-dark dark:border dark:border-primary rounded-full left-0 transition-all ease-in-out size-7 -z-10 overflow-hidden;
+    }
+    .fill__item {
+        @apply  bg-dark dark:bg-primary mt-9 ease-in-out duration-500 -top-10 w-full h-20 absolute scale-y-0;
+    }
+    .fill__iconbutton {
+        @apply  size-7 z-50 transition-all dark:fill-primary duration-1000 ease-in-out p-2 scale-150 md:p-1 md:scale-125;
+    }
+    .body__cover {
+        @apply size-full backdrop-blur-md max-w-full max-h-full left-1 top-1 fixed bg-opacity-30 bg-dark;
+    }
+    .nav__container {
+        @apply fixed rounded-xl backdrop-blur-xl lg:rounded-none shadow-xl mx-auto p-2 px-4 w-full z-[99] text-dark bg-nav dark:bg-dark dark:text-primary bg-opacity-75 dark:bg-opacity-75 dark:backdrop-blur-lg;
+    }
+}
+
+@layer utilities{
+    .card-project {
+        transform: translateZ(20px);
+    }
+    .card-components {
+        transform: perspective(1000px);
+    }
+    .tr-3d {
+        transform-style: preserve-3d;
+    }
+    .backdrop-filter-blur {
+        backdrop-filter: blur(15px);
+    }
+    .popup-content {
+        transform: translate(-50%, -50%);
+        width: 95%;
+    }
+}
