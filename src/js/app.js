@@ -1,15 +1,11 @@
 import Alpine from 'alpinejs';
 import VanillaTilt from 'vanilla-tilt';
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/all';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
 import Chart from 'chart.js/auto';
 import { color } from 'chart.js/helpers';
 
-
-gsap.registerPlugin(ScrollTrigger);
 AOS.init({
     disable: false, 
     startEvent: 'DOMContentLoaded',
@@ -252,7 +248,7 @@ Alpine.data('main', () => ({
     quickContact: `<div class="text-dark dark:text-primary h-full w-auto mx-20 flex flex-wrap justify-evenly md:justify-center">
                 <h1 data-aos="fade-left" data-aos-delay="500" data-aos-duration="700" class="my-3 self-center text-xl font-bold md:text-2xl lg:text-3xl xl:text-4xl">Get in Touch, Instantly!</h1>
                 <h3 data-aos="fade-right" data-aos-delay="500" data-aos-duration="700" class="my-3 text-sm font-semibold md:text-lg lg:text-xl xl:text-2xl">Your ideas matter. Let’s connect and make something amazing together!</h3>
-                <button data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700" class="primary__button text-sm md:text-base lg:text-lg xl:text-xl px-3 mx-auto self-center flex group" @click="popUp = !popUp">Send me Message Quickly <span class="group-hover:scale-150 scale-125 icon__button"><img :src="darkMode ? '../dist/img/mail-default.svg' : '../dist/img/mail-inverse.svg'" alt="icon"></span></button>
+                <button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="700" class="primary__button text-sm md:text-base lg:text-lg xl:text-xl px-3 mx-auto self-center flex group" @click="popUp = !popUp">Send me Message Quickly <span class="group-hover:scale-150 scale-125 icon__button"><img :src="darkMode ? '../dist/img/mail-default.svg' : '../dist/img/mail-inverse.svg'" alt="icon"></span></button>
             </div>`
 }));
 
