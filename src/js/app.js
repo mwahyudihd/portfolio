@@ -31,11 +31,17 @@ Alpine.store('darkMode', {
     dark: false,
 
     init() {
-        this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches
-        this.dark ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
+        const darkModePreference = localStorage.getItem('darkMode');
+        ((darkModePreference === 'dark' && (this.dark = true)) || darkModePreference === 'light' && (this.dark = false)) &&  (this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches)
+        this.updateDocumentClass();
     },
     toggleMode() {
-        this.dark = ! this.dark;
+        this.dark = !this.dark;
+        localStorage.setItem('darkMode', this.dark ? 'dark' : 'light');
+        this.updateDocumentClass();
+    },
+
+    updateDocumentClass() {
         this.dark ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark');
     }
 });
