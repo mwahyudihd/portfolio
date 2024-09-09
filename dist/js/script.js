@@ -18576,6 +18576,17 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     anchorPlacement: "top-bottom"
   });
   window.Alpine = module_default;
+  module_default.store("darkMode", {
+    dark: false,
+    init() {
+      this.dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      this.dark ? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark");
+    },
+    toggleMode() {
+      this.dark = !this.dark;
+      this.dark ? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark");
+    }
+  });
   module_default.data("setVisible", () => ({ popUp: false, navOn: false }));
   module_default.data("project", () => ({
     data: [
@@ -18787,13 +18798,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
                     </svg>
                 </button>
                 <div class="w-[50px] lg:h-[30px] mx-2 rounded-full bg-primary dark:bg-dark border h-[21.4px] dark:border-second relative border-dark">
-                    <label x-show="!darkMode" x-transition.duration.1000ms x-transition:leave.right x-transition:enter.right class="cursor-pointer bg-dark border rounded-full size-5 lg:size-7 hover:rotate-45 transition duration-300 ease-in-out absolute" for="theme">
+                    <label x-show="$store.darkMode.dark == false" x-transition.duration.1000ms x-transition:leave.right x-transition:enter.right class="cursor-pointer bg-dark border rounded-full size-5 lg:size-7 hover:rotate-45 transition duration-300 ease-in-out absolute" for="theme" @click="$store.darkMode.toggleMode()">
                         <img class="p-1" src="../dist/img/dark-theme-svgrepo-com.svg">
                     </label>
-                    <label x-show="darkMode" x-transition.duration.1000ms x-transition:enter.left x-transition:leave.left class="cursor-pointer border border-dark bg-primary right-0 hover:rotate-45 transition duration-300 ease-in-out rounded-full size-5 lg:size-7 absolute" for="theme">
+                    <label x-show="$store.darkMode.dark == true" x-transition.duration.1000ms x-transition:enter.left x-transition:leave.left class="cursor-pointer border border-dark bg-primary right-0 hover:rotate-45 transition duration-300 ease-in-out rounded-full size-5 lg:size-7 absolute" for="theme" @click="$store.darkMode.toggleMode()">
                         <img src="../dist/img/light-svgrepo-com.svg">
                     </label>
-                    <input x-model="darkMode" class="hidden" type="checkbox" id="theme">
+                    <input class="hidden" type="checkbox" id="theme">
                 </div>`,
     projectNav: [
       {

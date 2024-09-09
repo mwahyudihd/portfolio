@@ -14,7 +14,7 @@ body{
         font-size: xx-large;
     }
     font-size: larger;
-    background-color: var(--danger);
+    background-color: var(--clear);
 }
 h1{
     display: flex;
