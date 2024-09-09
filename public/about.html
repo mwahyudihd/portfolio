@@ -55,7 +55,7 @@
                 <div class="h-40 md:h-52 lg:h-60">
                     <ul class="flex group mx-1 flex-wrap my-4" x-data="skills">
                         <template x-for="stack of tech">
-                            <li :class="stack.delay && `delay-${stack.delay}`" class="border bg-gradient-to-tl my-2 md:my-3 from-dark via-second to-darkCard rounded-full group-hover:mx-2 lg:group-hover:mx-3 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="stack.image" alt=""></li>
+                            <li :class="stack.delay && `delay-[${stack.delay}ms]`" class="border bg-gradient-to-tl my-2 md:my-3 from-dark via-second to-darkCard rounded-full group-hover:mx-2 lg:group-hover:mx-3 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="stack.image" alt=""></li>
                         </template>
                     </ul>
                 </div>
@@ -63,7 +63,7 @@
                 <h1 class="font-bold text-base md:text-lg lg:text-xl xl:text-2xl dark:text-primary">Programming Languages :</h1>
                 <ul class="flex group my-3 flex-wrap mx-1" x-data="skills">
                     <template x-for="skill of skillAssets">
-                        <li :class="skill.delay && `delay-${skill.delay}`" class="border bg-gradient-to-tl from-dark via-second to-darkCard my-2 rounded-full group-hover:mx-2 md:group-hover:mx-3 lg:group-hover:mx-4 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="skill.image" alt=""></li>
+                        <li :class="skill.delay && `delay-[${skill.delay}ms]`" class="border bg-gradient-to-tl from-dark via-second to-darkCard my-2 rounded-full group-hover:mx-2 md:group-hover:mx-3 lg:group-hover:mx-4 mx-0 p-1 size-7 md:size-10 lg:size-10 scale-150 duration-500 ease-in-out cursor-pointer z-20"><img :src="skill.image" alt=""></li>
                     </template>
                 </ul>
             </div>

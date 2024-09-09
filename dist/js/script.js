@@ -18913,19 +18913,19 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       },
       {
         image: "https://img.icons8.com/?size=100&id=54087&format=png&color=000000",
-        delay: 700
+        delay: 600
       },
       {
         image: "https://img.icons8.com/?size=100&id=XH6rVkDQCZ9U&format=png&color=000000",
-        delay: 1e3
+        delay: 700
       },
       {
         image: "https://img.icons8.com/?size=100&id=SDVmtZ6VBGXt&format=png&color=000000",
-        delay: 1500
+        delay: 800
       },
       {
         image: "https://img.icons8.com/?size=100&id=puL87ypQPxxr&format=png&color=000000",
-        delay: 1e3
+        delay: 900
       },
       {
         image: "https://icon.icepanel.io/Technology/png-shadow-512/Alpine.js.png",
@@ -18933,15 +18933,15 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       },
       {
         image: "https://img.icons8.com/?size=100&id=24895&format=png&color=000000",
-        delay: 1e3
+        delay: 1100
       },
       {
         image: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
-        delay: 1e3
+        delay: 1200
       },
       {
         image: "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png&color=000000",
-        delay: 1e3
+        delay: 1300
       }
     ],
     skillAssets: [
@@ -18967,11 +18967,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       },
       {
         image: "https://img.icons8.com/?size=100&id=l75OEUJkPAk4&format=png&color=000000",
-        duration: 700
+        duration: 600
       },
       {
         image: "https://img.icons8.com/?size=100&id=55251&format=png&color=000000",
-        delay: 1e3
+        delay: 700
       }
     ],
     renderChart() {
