@@ -1249,6 +1249,22 @@ video {
   margin-right: 0.25rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-11 {
+  margin-top: 2.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1394,6 +1410,14 @@ video {
 
 .h-\[14rem\] {
   height: 14rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-1\/2 {
+  height: 50%;
 }
 
 .max-h-full {
@@ -1619,6 +1643,16 @@ video {
   border-radius: 0.75rem;
 }
 
+.rounded-b {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.rounded-b-lg {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1744,6 +1778,10 @@ video {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-bl {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+}
+
 .from-dark {
   --tw-gradient-from: #252525 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(37 37 37 / 0) var(--tw-gradient-to-position);
@@ -1834,6 +1872,10 @@ video {
 
 .fill-primary {
   fill: #ecf0f1;
+}
+
+.fill-white {
+  fill: #fff;
 }
 
 .object-cover {
@@ -1995,6 +2037,14 @@ video {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-11 {
+  padding-top: 2.75rem;
 }
 
 .text-left {
@@ -2501,6 +2551,10 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
+.dark\:bg-gradient-to-bl:is(.dark *) {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+}
+
 .dark\:from-dark:is(.dark *) {
   --tw-gradient-from: #252525 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(37 37 37 / 0) var(--tw-gradient-to-position);
@@ -2553,6 +2607,10 @@ video {
 
 .dark\:fill-primary:is(.dark *) {
   fill: #ecf0f1;
+}
+
+.dark\:fill-dark:is(.dark *) {
+  fill: #252525;
 }
 
 .dark\:text-blue-500:is(.dark *) {
@@ -2734,6 +2792,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible;
+  }
+
   .md\:invisible {
     visibility: hidden;
   }
@@ -2783,6 +2845,10 @@ video {
 
   .md\:mt-7 {
     margin-top: 1.75rem;
+  }
+
+  .md\:mt-4 {
+    margin-top: 1rem;
   }
 
   .md\:flex {
@@ -2888,6 +2954,10 @@ video {
 
   .md\:justify-around {
     justify-content: space-around;
+  }
+
+  .md\:rounded-lg {
+    border-radius: 0.5rem;
   }
 
   .md\:bg-transparent {
@@ -3199,5 +3269,10 @@ video {
   .xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
