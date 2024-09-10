@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import Chart from 'chart.js/auto';
 import { color } from 'chart.js/helpers';
 import particlesJS from 'particles.js';
-import Typed from 'typed.js';
+import { Typed } from 'typed.js';
 
 AOS.init({
     disable: false, 
@@ -79,7 +79,6 @@ Alpine.data('project', () => ({
             desc: 'A simple and responsive to-do list application built using Tailwind CSS and Alpine.js. This project is designed to help you manage and organize your daily tasks efficiently.',
             demo: 'https://mwahyudihd.github.io/todo-app/',
             repo: 'https://github.com/mwahyudihd/todo-app',
-            showcase: '',
             poster: '../dist/gif/todo-app.gif'
         },
         {
@@ -88,7 +87,6 @@ Alpine.data('project', () => ({
             desc: 'This project is a web application for recording personal debts and notes.',
             demo: 'https://wahyudi.barudakkoding.com/debtwriter-app/public/',
             repo: '',
-            showcase: '',
             poster: '../dist/gif/debtwriter-ci4.gif'
         },
         {
@@ -97,7 +95,6 @@ Alpine.data('project', () => ({
             desc: 'This application is developed using Flutter, providing a seamless and engaging user experience.',
             demo: '',
             repo: 'https://github.com/mwahyudihd/fotocopy-app2',
-            showcase: '',
             poster: '../dist/img/fotocopy-app.png'
         },
         {
@@ -106,7 +103,6 @@ Alpine.data('project', () => ({
             desc: 'This API was created as a beckend project of the Fotocopy app (Flutter mobile).',
             demo: 'https://wahyudi.barudakkoding.com/fotocopy-api/public/produk/',
             repo: 'https://github.com/mwahyudihd/fotocopy-api',
-            showcase: '',
             poster: '../dist/img/api-fotocopy.png'
         },
         {
@@ -115,7 +111,6 @@ Alpine.data('project', () => ({
             desc: 'This project is a web application for recording personal debts. It uses Express.js as the backend and MongoDB as its database.',
             demo: '',
             repo: 'https://github.com/mwahyudihd/debt-writer',
-            showcase: '',
             poster: '../dist/gif/web-debtwriter-mongo.gif'
         },
         {
@@ -124,7 +119,6 @@ Alpine.data('project', () => ({
             desc: 'Eflower is a website-based application a Marketplace for the sale of ornamental plants. this application is built to fulfill the project 1 course.',
             demo: '',
             repo: 'https://github.com/mwahyudihd/web-eflower',
-            showcase: '',
             poster: '../dist/gif/web-eflower.gif'
         },
         {
@@ -133,7 +127,6 @@ Alpine.data('project', () => ({
             desc: 'Debter is a Flutter app, this project was created for educational purposes. The app is designed to help users record debts, delete records, mark payments, and use a calculator for debt management purposes.',
             demo: '',
             repo: 'https://github.com/mwahyudihd/debter',
-            showcase: '',
             poster: '../dist/gif/debter-app.gif'
         }
         // ,
