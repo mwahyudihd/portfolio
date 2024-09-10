@@ -107,7 +107,7 @@
                 <button class="absolute ml-5 right-2 bottom-0 hover:rotate-180 transition-all ease-in-out duration-700"><img class="size-[50px]" :src="!darkMode ? '../dist/img/close-light.svg' : '../dist/img/close-dark.svg'"></button>
             </div>
             <img id="nav-person-ico" class="pt-10 w-40 md:hidden rounded-full" src="https://blush.design/api/download?shareUri=wEiSOuKG_50B5sWv&c=Skin_0%7Eedb98a&bg=ffb2c9&w=800&h=800&fm=png">
-            <li class="nav__list"><a href="#">Home</a></li>
+            <li class="nav__list dark:text-blue-300"><a href="#">Home</a></li>
             <li class="nav__list"><a href="#">About</a></li>
             <li class="nav__list" @click="navOn = ! navOn"><a href="#content">Projects</a></li>
             <li class="nav__list" @click="navOn = ! navOn"><a href="#contact">Contact</a></li>
@@ -202,5 +202,12 @@
         <div class="delay-[1200ms]"></div>
         <div class="delay-[1300ms]"></div>
         
+
+        <!-- backup -->
+        <!-- <template x-if="item.showcase">
+            <video :src="item.showcase" autoplay loop muted playsinline class="card-components mx-auto brightness-125 z-50 hover:scale-110 duration-[800ms] cursor-zoom-in transition ease-in-out h-40 w-full object-cover object-top">
+            </video>
+        </template> -->
+        <!-- backup -->
     </body>
     </html>
