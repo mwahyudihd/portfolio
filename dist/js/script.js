@@ -19833,6 +19833,44 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     }
   }));
   module_default.data("project", () => ({
+    recently: [
+      {
+        title: "Todo App",
+        image: "../dist/img/todo-app.png",
+        delay: 0,
+        demo: "https://mwahyudihd.github.io/todo-app/",
+        repo: "https://github.com/mwahyudihd/todo-app",
+        desc: "A simple and responsive to-do list application built using Tailwind CSS and Alpine.js. This project is designed to help you manage and organize your daily tasks efficiently.",
+        mobile: false,
+        web: true,
+        api: false,
+        desktop: false
+      },
+      {
+        title: "debtwriter App",
+        image: "../dist/img/debtwriter-ci-poster.png",
+        delay: 300,
+        demo: "https://wahyudi.barudakkoding.com/debtwriter-app/public/",
+        repo: "",
+        desc: "This project is a web application for recording personal debts and notes.",
+        mobile: false,
+        web: true,
+        api: false,
+        desktop: false
+      },
+      {
+        title: "Fotocopy App (Point of Sale)",
+        image: "../dist/img/fotocopy-app.png",
+        delay: 600,
+        demo: "",
+        repo: "https://github.com/mwahyudihd/fotocopy-app2",
+        desc: "This application is developed using Flutter, providing a seamless and engaging user experience.",
+        mobile: true,
+        web: false,
+        api: false,
+        desktop: false
+      }
+    ],
     data: [
       {
         title: "Todo App",
@@ -20057,7 +20095,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         title: "Projects"
       },
       {
-        url: "#contact",
+        url: "contact.html",
         title: "Contact"
       }
     ],
@@ -20075,7 +20113,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         title: "Projects"
       },
       {
-        url: "#contact",
+        url: "contact.html",
         title: "Contact"
       }
     ],
@@ -20093,7 +20131,25 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         title: "Projects"
       },
       {
-        url: "#contact",
+        url: "contact.html",
+        title: "Contact"
+      }
+    ],
+    contactNav: [
+      {
+        url: "index.html",
+        title: "Home"
+      },
+      {
+        url: "about.html",
+        title: "About"
+      },
+      {
+        url: "project.html",
+        title: "Projects"
+      },
+      {
+        url: "#quick-contact",
         title: "Contact"
       }
     ]

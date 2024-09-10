@@ -33,6 +33,13 @@
     .nav__container {
         @apply fixed rounded-xl backdrop-blur-xl lg:rounded-none shadow-xl mx-auto p-2 px-4 w-full z-[99] text-dark bg-nav dark:bg-dark dark:text-primary bg-opacity-75 dark:bg-opacity-75 dark:backdrop-blur-lg;
     }
+    .no__scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no__scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+  }
 }
 
 @layer utilities{

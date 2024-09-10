@@ -16,6 +16,9 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         firaCode: ['Fira Code', 'monospace']
       },
+      animation: {
+        typing: "typed 700ms ease-in-out infinite alternate 0.5s"
+      },
       keyframes: {
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
@@ -25,6 +28,11 @@ export default {
             opacity: 0,
           },
         },
+        typed: {
+          "0%" : { opacity: "0" },
+          "50%" : { opacity: "1" },
+          "100%" : { opacity: "0" }
+        }
       },
     },
   },
