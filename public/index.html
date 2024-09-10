@@ -1,16 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Home</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="../dist/css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+    </style>
 </head>
-<body class="bg-primary font-poppins">
-    <header>
-        
+<body x-data="setVisible" :class="popUp && 'overflow-hidden'" class="bg-primary m-0 p-0 min-h-screen flex flex-col size-full selection:bg-dark dark:selection:bg-primary dark:selection:text-dark selection:text-primary dark:bg-dark font-poppins transition ease-in-out duration-500 max-h-full">
+    <header data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200" class="nav__container" >
+        <nav x-data="navbar" class="flex size-full justify-between items-center">
+            <h1 class="text-xl mr-10 md:text-2xl lg:text-4xl mx-2 my-3 font-bold"><a href="#"><span class="scale-50"><</span>W<span>h</span><span>y</span><span class="scale-75">></span></a></h1>
+            <ul :class="navOn ? 'mb-0' : 'mb-[2000rem]'" class="md:h-full flex transition-all duration-1000 ease-in-out text-2xl md:mb-0 h-[200rem] md:w-auto w-full left-0 md:left-auto md:flex-row flex-col mt-[20rem] md:mt-0 justify-center md:justify-around items-center bg-primary backdrop-blur-xl bg-opacity-60 dark:backdrop-blur-xl dark:md:backdrop-blur-none dark:md:bg-opacity-100 dark:bg-opacity-60 absolute md:backdrop-blur-none md:bg-opacity-100 dark:text-white z-[7000] md:bg-transparent md:dark:bg-transparent dark:bg-dark text-dark md:flex rounded-lg md:static">
+                <div @click="navOn = ! navOn" class="md:hidden w-full pt-[20rem] relative">
+                    <button class="absolute ml-5 right-2 bottom-0 hover:rotate-180 transition-all ease-in-out duration-700"><img class="size-[50px]" :src="!$store.darkMode.dark ? '../dist/img/close-light.svg' : '../dist/img/close-dark.svg'"></button>
+                </div>
+                <img id="nav-person-ico" class="pt-10 w-40 md:hidden rounded-full" src="https://blush.design/api/download?shareUri=wEiSOuKG_50B5sWv&c=Skin_0%7Eedb98a&bg=ffb2c9&w=800&h=800&fm=png">
+                <template x-for="(path, index) of homeNav" :key="index">
+                    <li class="nav__list" @click="navOn = ! navOn"><a :href="path.url" x-text="path.title"></a></li>
+                </template>
+            </ul>
+            </div>
+            <div class="flex" x-html="toggle"></div>
+        </nav>
     </header>
+    <main x-data="main">
+        <section x-data="heroIndex" class="relative mt-10 h-96 md:h-[38rem]">
+            <div x-data="{ getAnimation(path){ particlesJS.load('particles-js', `${path}`, () => {setCanvasAbsolute()}) } }" x-init="getAnimation('../../src/json/particlesjs-config.json')" id="particles-js" class="w-full h-full dark:bg-gradient-to-t dark:from-dark dark:via-deepSea dark:to-darkCard bg-gradient-to-b from-nav to-primary flex flex-wrap-reverse items-center justify-evenly rounded-lg">
+                <div class="font-firaCode dark:text-primary text-blue-700 text-sm mx-5 md:text-lg lg:text-xl left-[30%] top-1/2 md:left-[45%] rounded-lg dark:bg-dark p-5 bg-white flex flex-wrap z-10">
+                    <h6 class="flex items-center mb-2 w-full">
+                        <div class="flex">
+                            <div class="rounded-full size-2 md:size-3 mx-1 lg:size-4 xl:size-5 bg-red-500"></div>
+                            <div class="rounded-full size-2 md:size-3 mx-1 lg:size-4 xl:size-5 bg-green-500"></div>
+                            <div class="rounded-full size-2 md:size-3 mx-1 lg:size-4 xl:size-5 bg-blue-500"></div>
+                        </div>
+                    </h6>
+                    <div class="flex flex-nowrap w-52 md:w-80" x-data="heroIndex" x-init="typing">
+                        <ul>
+                            <li>1.</li>
+                            <li>2.</li>
+                            <li>3.</li>
+                            <li>4.</li>
+                            <li>5.</li>
+                            <li>6.</li>
+                            <li class="md:hidden">7.</li>
+                        </ul>
+                        <ul class="">
+                            <li class="mx-1">#hero {</li>
+                            <li class="pl-4 dark:text-red-400 flex items-center">Hi, There <span><svg class="size-4 md:size-5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="#42ade2"> <path d="M16.1 48.5c-.5-.1-.9-.2-1.4-.4c-.5-.2-.9-.3-1.3-.5c-.9-.4-1.7-.9-2.5-1.5C9.3 45 8 43.5 7 41.7C6 40 5.4 38 5.3 36.1c-.1-1 0-1.9.1-2.9c.1-.5.2-.9.3-1.4c.1-.5.3-.9.4-1.4l.1 1.4c0 .5.1.9.2 1.4c.1.9.3 1.8.5 2.6c.4 1.7 1 3.3 1.9 4.8c.9 1.5 1.9 2.9 3.2 4.2c.6.6 1.3 1.2 2 1.8c.3.3.7.6 1.1.9l1 1"> </path> <path d="M15.8 52.1c-.3.2-.7.3-1.1.4c-.4.1-.7.2-1.1.2c-.7.1-1.5.2-2.3.1c-1.5-.1-3.1-.5-4.4-1.2c-1.4-.7-2.6-1.8-3.4-3.1c-.4-.6-.8-1.3-1.1-2c-.1-.3-.2-.7-.3-1.1c0-.3-.1-.6-.1-1c.3.3.5.6.7.8c.3.3.5.6.7.8c.5.5.9 1 1.4 1.4c1 .9 2 1.7 3.2 2.3c1.1.6 2.4 1.1 3.6 1.5c.6.2 1.3.3 2 .5c.3.1.7.1 1 .2c.5.1.8.1 1.2.2"> </path> <path d="M38.4 3.5c.5.1.9.3 1.4.5c.5.2.9.4 1.3.6c.9.5 1.7 1 2.5 1.6c1.6 1.2 2.9 2.8 3.8 4.6c.9 1.8 1.4 3.8 1.4 5.7c0 1-.1 1.9-.3 2.9c-.1.5-.2.9-.4 1.4c-.2.5-.3.9-.5 1.3l-.1-1.4c0-.5 0-.9-.1-1.4l-.3-2.7c-.3-1.7-.9-3.4-1.7-5c-.8-1.6-1.8-3-3-4.3c-.6-.7-1.3-1.3-1.9-2c-.3-.3-.7-.6-1.1-.9l-1-.9"> </path> <path d="M47.1 3.1c.4.1.7.2 1 .4c.3.1.7.3 1 .5c.6.4 1.2.8 1.8 1.3c1.1 1 2 2.2 2.5 3.6c.6 1.4.8 2.9.6 4.4c-.1.7-.3 1.4-.5 2.1c-.1.3-.3.7-.4 1c-.2.3-.3.6-.6.9v-2c0-.7-.1-1.3-.1-1.9c-.2-1.3-.4-2.5-.9-3.6c-.5-1.2-1.1-2.2-1.8-3.3c-.4-.5-.8-1.1-1.2-1.6c-.2-.3-.4-.5-.7-.8c-.2-.5-.5-.8-.7-1"> </path> </g> <g fill="#ffdd67"> <path d="M10 18c-2 .9-2.7 3.3-1.8 5.3l12.6 26.3l7-3.3l-12.6-26.4c-.9-2-3.2-2.9-5.2-1.9"> </path> <path d="M43.1 38.9l7.4-3.5l-14.4-30c-1-2-3.4-2.9-5.5-1.9c-2 1-2.9 3.4-1.9 5.5l14.4 29.9"> </path> </g> <path d="M30.7 3.4c-.2.1-.4.2-.6.4c1.9-.5 3.9.4 4.8 2.2l14.4 30l1.3-.6l-14.4-30c-1-2.1-3.4-3-5.5-2" fill="#eba352"> </path> <path d="M27.8 46.2l7.7-3.7l-14.7-30.6c-1-2.1-3.6-3.1-5.7-2.1s-3 3.6-2 5.7l14.7 30.7" fill="#ffdd67"> </path> <path d="M15.1 9.9c-.2.1-.4.2-.6.4c1.9-.5 4.1.4 5 2.3l9.1 19.1l2.2 1.3l-10-21c-1-2.2-3.5-3.1-5.7-2.1" fill="#eba352"> </path> <path d="M34.3 40.1l7.7-3.7L27.3 5.8c-1-2.1-3.6-3.1-5.7-2c-2.1 1-3 3.6-2 5.7l14.7 30.6" fill="#ffdd67"> </path> <g fill="#eba352"> <path d="M21.6 3.7c-.2.1-.4.3-.6.4c1.9-.5 4.1.4 5 2.3L36.3 28l2.2 1.3L27.3 5.8c-1-2.2-3.6-3.1-5.7-2.1"> </path> <path d="M10 18c-.2.1-.4.2-.6.4c1.8-.5 3.7.4 4.5 2.2l7.5 15.7l2.2 1.3L15.2 20c-.9-2.1-3.2-3-5.2-2"> </path> </g> <path d="M60.8 15c-2.7-2.1-7.1.2-9.3 7.4c-1.5 5-1.7 6.5-4.9 8l-1.8-3.7S16.4 40.4 17.5 42.6c0 0 3.4 10.6 9.2 15.5c8.6 7.4 28.7-.5 29.6-19.6c.5-11.1 7.4-21.2 4.5-23.5" fill="#ffdd67"> </path> <g fill="#eba352"> <path d="M60.8 15c-.5-.4-1.1-.6-1.7-.7c.1.1.3.1.4.2c3 2.3-.1 7.6-1.8 12.4c-1.4 3.8-2.6 7.7-2.4 11.5c.8 16.6-15.9 24.5-25.9 21.5c9.8 4.1 28-3.7 27.2-21c-.2-3.8.9-7.5 2.4-11.5c1.6-4.8 4.7-10.1 1.8-12.4"> </path> <path d="M47.5 30c-6.2.7-15.3 9.6-8.9 19.3c-4.7-9.8 3-16.4 7.9-18.7c.5-.4 1-.6 1-.6"> </path> </g> </g></svg></span>,</li>
+                            <li class="pl-4 dark:text-green-400">Im <span id="typed-list"></span></li>
+                            <li class="pl-4 dark:text-blue-500">you can find me: </li>
+                            <li class="mx-1">}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center flex-col">
+                    <h1 class="text-dark dark:text-primary text-base font-semibold md:text-xl xl:text-2xl">Wellcome to</h1>
+                    <h1 class="text-dark dark:text-primary text-2xl font-bold md:text-3xl xl:text-4xl">Why's Portfolio</h1>
+                </div>
+            </div>
+        </section>
+        <section data-aos="zoom-in" id="quick-contact" class="h-full lg:h-96 my-3 py-8 container size-full max-w-full dark:bg-gradient-to-tl dark:from-deepSea dark:via-darkCard dark:to-primary bg-nav rounded-xl bg-opacity-70 backdrop-blur-lg" x-html="quickContact">
+        </section>
+    </main>
+    <div x-data="popUpComponent">
+        <div id="alert-contain" x-data="msg" x-html="messagePopUp"></div>
+    </div>
+    <footer x-data="footer" class="mt-auto container size-full max-w-full bg-nav dark:bg-dark dark:border rounded-xl bg-opacity-70 backdrop-blur-lg">
+        <div class="h-full w-auto flex flex-wrap justify-around py-9 text-sm md:text-base text-dark dark:text-primary">
+            <h1 class="md:font-medium lg:font-semibold">&copy; 2024 M Wahyudi HD</h1>
+            <ul id="contact" class="flex">
+                <template x-for="list of link">
+                    <li class="mx-1 md:mx-3">
+                        <a :href="list.url" class="group relative">
+                            <div class="fill__container">
+                                <div class="group-hover:scale-y-100 fill__item"></div>
+                            </div>
+                            <tag x-html="list.svg"></tag>
+                        </a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </footer>
+    
     <script src="../dist/js/script.js"></script>
 </body>
 </html>

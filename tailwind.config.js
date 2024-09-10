@@ -14,9 +14,7 @@ export default {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-      },
-      animation: {
-        meteor: "meteor 5s linear infinite",
+        firaCode: ['Fira Code', 'monospace']
       },
       keyframes: {
         meteor: {

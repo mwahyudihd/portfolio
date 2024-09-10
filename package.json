@@ -18,6 +18,8 @@
     "aos": "^2.3.4",
     "chart.js": "^4.4.4",
     "esbuild": "^0.23.1",
+    "particles.js": "^2.0.0",
+    "typed.js": "^2.1.0",
     "vanilla-tilt": "^1.8.1"
   },
   "devDependencies": {

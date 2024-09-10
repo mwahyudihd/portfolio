@@ -5,6 +5,8 @@ import 'aos/dist/aos.css';
 import emailjs from '@emailjs/browser';
 import Chart from 'chart.js/auto';
 import { color } from 'chart.js/helpers';
+import particlesJS from 'particles.js';
+import Typed from 'typed.js';
 
 AOS.init({
     disable: false, 
@@ -27,12 +29,14 @@ AOS.init({
 
 window.Alpine = Alpine;
 
+
 Alpine.store('darkMode', {
     dark: false,
 
     init() {
         const darkModePreference = localStorage.getItem('darkMode');
-        ((darkModePreference === 'dark' && (this.dark = true)) || darkModePreference === 'light' && (this.dark = false)) &&  (this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches)
+        // ((darkModePreference === 'dark' && (this.dark = true)) || darkModePreference === 'light' && (this.dark = false)) && (this.dark = window.matchMedia('(prefers-color-scheme: dark)').matches)
+        (darkModePreference === 'dark' && (this.dark = true)) || darkModePreference === 'light' && (this.dark = false)
         this.updateDocumentClass();
     },
     toggleMode() {
@@ -47,6 +51,24 @@ Alpine.store('darkMode', {
 });
 
 Alpine.data('setVisible', () => ({ popUp: false, navOn: false }));
+
+Alpine.data('heroIndex', () => ({
+    setCanvasAbsolute(){
+        const getElCanvas = document.querySelector('.particles-js-canvas-el');
+        if (getElCanvas) {
+            getElCanvas.classList.add('absolute');
+        }
+    },
+    typing(){
+        new Typed('#typed-list', {
+            strings: ['Fullstack Developer,', 'Flutter development enthusiast,'],
+            loop: true,
+            backDelay: 1500,
+            typeSpeed: 100,
+            backSpeed: 100,
+        })
+    }
+}));
 
 Alpine.data('project', () => ({
     data: [
@@ -115,7 +137,7 @@ Alpine.data('project', () => ({
         }
         // ,
         // {
-        //     title: '',
+            //     title: '',
         //     icon: [],
         //     desc: '',
         //     demo: '',
@@ -267,7 +289,7 @@ Alpine.data('main', () => ({
     quickContact: `<div class="text-dark dark:text-primary h-full w-auto mx-20 flex flex-wrap justify-evenly md:justify-center">
                 <h1 data-aos="fade-left" data-aos-delay="500" data-aos-duration="700" class="my-3 self-center text-xl font-bold md:text-2xl lg:text-3xl xl:text-4xl">Get in Touch, Instantly!</h1>
                 <h3 data-aos="fade-right" data-aos-delay="500" data-aos-duration="700" class="my-3 text-sm font-semibold md:text-lg lg:text-xl xl:text-2xl">Your ideas matter. Let’s connect and make something amazing together!</h3>
-                <button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="700" class="primary__button text-sm md:text-base lg:text-lg xl:text-xl px-3 mx-auto self-center flex group" @click="popUp = !popUp">Send me Message Quickly <span class="group-hover:scale-150 scale-125 icon__button"><img :src="darkMode ? '../dist/img/mail-default.svg' : '../dist/img/mail-inverse.svg'" alt="icon"></span></button>
+                <button data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="700" class="primary__button text-sm md:text-base lg:text-lg xl:text-xl px-3 mx-auto self-center flex group" @click="popUp = !popUp">Send me Message Quickly <span class="group-hover:scale-150 scale-125 icon__button"><img :src="$store.darkMode.dark ? '../dist/img/mail-default.svg' : '../dist/img/mail-inverse.svg'" alt="icon"></span></button>
             </div>`
 }));
 
@@ -287,6 +309,24 @@ Alpine.data('navbar', () => ({
                     </label>
                     <input class="hidden" type="checkbox" id="theme">
                 </div>`,
+    homeNav: [
+        { 
+            url:'#content',
+            title: 'Home'
+         },
+        { 
+            url:'about.html',
+            title: 'About'
+         },
+        { 
+            url:'project.html',
+            title: 'Projects'
+         },
+        { 
+            url:'#contact',
+            title: 'Contact'
+        }
+    ],
     projectNav: [
         { 
             url:'index.html',
@@ -332,7 +372,7 @@ Alpine.data('popUpComponent', () => ({
             @click.outside="popUp = false" x-transition:.enter.scale.90 x-transition:leave.opacity.left 
             class="text-dark dark:text-primary z-[1001] dark:bg-dark dark:bg-opacity-60 dark:backdrop-blur-lg fixed overflow-hidden popup-content max-w-[450px] top-1/2 left-1/2 backdrop-blur-xl bg-opacity-60 shadow-xl shadow-darkCard transition-all ease-in-out duration-300 p-[27px] rounded-lg bg-primary" >
                 <button class="absolute right-0 top-0 m-3 hover:rotate-180 transition duration-500 ease-in-out" @click="popUp = false">
-                    <img class="size-[30px]" :src="!darkMode ? '../dist/img/close-light.svg' : '../dist/img/close-dark.svg'">
+                    <img class="size-[30px]" :src="! $store.darkMode.dark ? '../dist/img/close-light.svg' : '../dist/img/close-dark.svg'">
                 </button>
                 <h1 class="mb-1 font-semibold text-xl text-center">Quick Message</h1>
                 <p class="mb-1 mx-2 font-poppins text-sm text-justify">Hi There 👋, Lets send me Any Questions or Messages.</p>
@@ -351,7 +391,7 @@ Alpine.data('popUpComponent', () => ({
                             <textarea class="textarea__input" x-model="message" name="body" id="message" placeholder="Message"></textarea>
                         </div>
                         <div class="mx-auto max-w-max">
-                            <button class="primary__button group px-1 pl-2 flex" type="submit">Send <span class="icon__button group-hover:scale-125 group-hover:pl-3 delay-500"><img :src="darkMode ? '../dist/img/plane.svg' : '../dist/img/light-plane.svg'"></span></button>
+                            <button class="primary__button group px-1 pl-2 flex" type="submit">Send <span class="icon__button group-hover:scale-125 group-hover:pl-3 delay-500"><img :src="$store.darkMode.dark ? '../dist/img/plane.svg' : '../dist/img/light-plane.svg'"></span></button>
                         </div>
                     </form>
                 </div>
@@ -359,22 +399,22 @@ Alpine.data('popUpComponent', () => ({
             <div x-html="notify"></div>`,
     notify: `<div x-show="success" x-transition.duration.500ms>
             <div class="cursor-default fixed md:top-[18%] top-1 left-0 lg:left-[71.1%] border rounded-xl transition-all ease-in-out duration-700 w-[350px] h-[80px] md:h-[85px] md:text-xl bg-opacity-75 backdrop-blur-lg z-[9000] bg-primary dark:bg-darkCard text-dark dark:text-primary">
-                <h1 class="px-3 text-center font-bold w-full py-1 relative">Yay!, <span class="absolute right-0 top-0 pr-4 group m-1 mr-2 scale-150"><button @click="closeWrongAlert"><svg class="absolute  top-1 group-hover:rotate-180 transition-all ease-in-out duration-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" :stroke="darkMode ? '#ffff' : '#252525'" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" :stroke="darkMode ? '#fff' : '#252525'" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></button></span></h1>
-                <p class="px-3 text-justify text-sm font-semibold">Pesan anda berhasil terkirim.</p>
+                <h1 class="px-3 text-center font-bold w-full py-1 relative">Yay!, <span class="absolute right-0 top-0 pr-4 group m-1 mr-2 scale-150"><button @click="closeWrongAlert"><svg class="absolute  top-1 group-hover:rotate-180 transition-all ease-in-out duration-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" :stroke="$store.darkMode.dark ? '#ffff' : '#252525'" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" :stroke="$store.darkMode.dark ? '#fff' : '#252525'" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></button></span></h1>
+                <p class="px-3 text-justify text-sm font-semibold">Your message was sent successfully.</p>
                 <p class="text-left text-sm px-3 float-end dark:text-blue-500 text-blue-900">Status: Success.</p>
             </div>
         </div>
         <div x-show="wrong" x-transition.duration.500ms>
-            <div class="cursor-default fixed md:top-[18%] top-1 left-0 lg:left-[71.1%] border rounded-xl transition-all ease-in-out duration-700 w-[350px] h-[80px] md:h-[85px] md:text-xl bg-opacity-75 backdrop-blur-lg z-[9000] bg-red-900 text-primary">
+            <div class="cursor-default fixed md:top-[18%] top-1 left-0 lg:left-[71.1%] border rounded-xl transition-all ease-in-out duration-700 w-[350px] h-[100px] md:h-[105px] md:text-xl bg-opacity-75 backdrop-blur-lg z-[9000] bg-red-900 text-primary">
                 <h1 class="px-3 text-center font-bold w-full py-1 relative">Ops!, <span class="absolute right-0 top-0 pr-4 group m-1 mr-2 scale-150"><button @click="closeWrongAlert"><svg class="absolute top-1 group-hover:rotate-180 transition-all ease-in-out duration-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></button></span></h1>
-                <p class="px-3 text-justify text-sm font-semibold">Form yang anda kirim belum lengkap.</p>
+                <p class="px-3 text-justify text-sm font-semibold">The form you sent is not complete, please complete it first.</p>
                 <p class="text-left text-sm px-3 float-end text-yellow-300">Status: #404</p>
             </div>
         </div>
         <div x-show="errorServer" x-transition.duration.500ms>
             <div class="cursor-default fixed md:top-[18%] top-1 left-0 lg:left-[71.1%] border rounded-xl transition-all ease-in-out duration-700 w-[350px] h-[100px] md:h-[105px] md:text-xl bg-opacity-75 backdrop-blur-lg z-[9000] bg-red-900 text-primary">
                 <h1 class="px-3 text-center font-bold w-full py-1 relative">Ops!, <span class="absolute right-0 top-0 pr-4 group m-1 mr-2 scale-150"><button @click="closeWrongAlert"><svg class="absolute top-1 group-hover:rotate-180 transition-all ease-in-out duration-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round"></path> </g></svg></button></span></h1>
-                <p class="px-3 text-justify text-sm font-semibold">Terjadi kesalahan pada server silahkan gunakan metode lain.</p>
+                <p class="px-3 text-justify text-sm font-semibold">There is an error on the server please use another method.</p>
                 <p class="text-left text-sm px-3 float-end text-yellow-300">Status: #500</p>
             </div>
         </div>`
