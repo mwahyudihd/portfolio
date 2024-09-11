@@ -2137,6 +2137,14 @@ video {
   transition-delay: 1300ms;
 }
 
+.delay-\[1400ms\] {
+  transition-delay: 1400ms;
+}
+
+.delay-\[1500ms\] {
+  transition-delay: 1500ms;
+}
+
 .delay-\[200ms\] {
   transition-delay: 200ms;
 }
@@ -2167,6 +2175,10 @@ video {
 
 .delay-\[900ms\] {
   transition-delay: 900ms;
+}
+
+.delay-\[1400\] {
+  transition-delay: 1400;
 }
 
 .duration-100 {
