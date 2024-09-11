@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./public/**/*{html,js}'],
+  content: ['./public/**/*{html,js}', 'index.html', './test/**/*{html,js}'],
   theme: {
     extend: {
       colors: {
@@ -10,7 +10,8 @@ export default {
         heroMain: '#7f8c8d',
         nav: '#95a5a6',
         darkCard: '#34495e',
-        deepSea: '#31304D'
+        deepSea: '#31304D',
+        extraDark: '#000000'
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
