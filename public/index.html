@@ -29,7 +29,7 @@
             <div class="flex" x-html="toggle"></div>
         </nav>
     </header>
-    <main x-data="main">
+    <main x-data="main" class="mb-auto">
         <section class="h-[100px] w-full bg-nav dark:bg-darkCard md:hidden"></section>
         <section id="content" x-data="heroIndex" class="relative h-96 md:h-[38rem] mb-5">
             <div x-data="{ getAnimation(path){ particlesJS.load('particles-js', `${path}`, () => {setCanvasAbsolute()}) } }" x-init="getAnimation('../../src/json/particlesjs-config.json')" id="particles-js" class="w-full h-full dark:bg-gradient-to-t dark:from-dark dark:via-deepSea dark:to-darkCard bg-gradient-to-b from-nav to-primary flex flex-wrap-reverse items-center justify-evenly rounded-b-lg md:rounded-lg">
