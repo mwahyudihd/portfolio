@@ -29,7 +29,7 @@
             <div class="flex" x-html="toggle"></div>
         </nav>
     </header>
-    <main x-data="main" class="mb-auto">
+    <main x-data="main">
         <section x-data="heroIndex" class="relative h-96 md:h-[38rem] mb-5">
             <div x-data="{ getAnimation(){ particlesJS.load('particles-js', '../../src/json/particlesjs-net.json', () => {setCanvasAbsolute()}) } }" x-init="getAnimation()" id="particles-js" class="w-full h-full dark:bg-gradient-to-t dark:from-dark dark:via-deepSea dark:to-darkCard bg-gradient-to-b from-nav to-primary flex flex-wrap-reverse items-center justify-evenly rounded-b-lg md:rounded-lg">
                 <div data-aos="zoom-in" data-aos-duration="500" data-aos-delay="1000" class="font-firaCode dark:text-primary text-blue-700 text-sm mx-0 sm:mx-5 md:text-lg lg:text-xl left-[30%] top-1/2 md:left-[45%] rounded-lg dark:bg-dark p-5 bg-white flex flex-wrap z-10">
@@ -80,7 +80,7 @@
                 <template x-for="list of link">
                     <li class="mx-1 md:mx-3">
                         <a :href="list.url" class="group relative">
-                            <div class="fill__container">
+                            <div class="fill__container mt-auto">
                                 <div class="group-hover:scale-y-100 fill__item"></div>
                             </div>
                             <tag x-html="list.svg"></tag>
