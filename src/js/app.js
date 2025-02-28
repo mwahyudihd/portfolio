@@ -101,8 +101,8 @@ Alpine.data('project', () => ({
             title: 'debtwriter App',
             image: '../dist/img/debtwriter-ci-poster.png',
             delay: 300,
-            demo: 'https://wahyudi.barudakkoding.com/debtwriter-app/public/',
-            repo: '',
+            demo: '',
+            repo: 'https://github.com/mwahyudihd/debtwriter-app',
             desc: 'This project is a web application for recording personal debts and notes.',
             mobile: false,
             web: true,
@@ -131,8 +131,8 @@ Alpine.data('project', () => ({
             title: 'Debtwriter web - app',
             icon: ['https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-codeigniter-is-an-open-source-software-rapid-development-web-framework-logo-shadow-tal-revivo.png', 'https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000', 'https://img.icons8.com/?size=100&id=PndQWK6M1Hjo&format=png&color=000000', 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000'],
             desc: 'This project is a web application for recording personal debts and notes.',
-            demo: 'https://wahyudi.barudakkoding.com/debtwriter-app/public/',
-            repo: '',
+            demo: '',
+            repo: 'https://github.com/mwahyudihd/debtwriter-app.git',
             poster: '../dist/gif/debtwriter-ci4.gif'
         },
         {
