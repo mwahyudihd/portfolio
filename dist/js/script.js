@@ -19839,7 +19839,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         image: "../dist/img/plantio-mockup.png",
         delay: 0,
         demo: "",
-        repo: "https://github.com/mwahyudihd/smartio_app",
+        repo: "https://github.com/mwahyudihd/plantio_app",
         desc: "PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college",
         mobile: true,
         web: false,
@@ -19862,8 +19862,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         title: "debtwriter App",
         image: "../dist/img/debtwriter-ci-poster.png",
         delay: 300,
-        demo: "https://wahyudi.barudakkoding.com/debtwriter-app/public/",
-        repo: "",
+        demo: "",
+        repo: "https://github.com/mwahyudihd/debtwriter-app",
         desc: "This project is a web application for recording personal debts and notes.",
         mobile: false,
         web: true,
@@ -19877,7 +19877,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000"],
         desc: "PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college",
         demo: "",
-        repo: "https://github.com/mwahyudihd/smartio_app",
+        repo: "https://github.com/mwahyudihd/plantio_app",
         poster: "../dist/img/plantio-mockup.png"
       },
       {
@@ -19892,8 +19892,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         title: "Debtwriter web - app",
         icon: ["https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-codeigniter-is-an-open-source-software-rapid-development-web-framework-logo-shadow-tal-revivo.png", "https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=000000", "https://img.icons8.com/?size=100&id=PndQWK6M1Hjo&format=png&color=000000", "https://img.icons8.com/?size=100&id=108784&format=png&color=000000"],
         desc: "This project is a web application for recording personal debts and notes.",
-        demo: "https://wahyudi.barudakkoding.com/debtwriter-app/public/",
-        repo: "",
+        demo: "",
+        repo: "https://github.com/mwahyudihd/debtwriter-app.git",
         poster: "../dist/gif/debtwriter-ci4.gif"
       },
       {

@@ -78,7 +78,7 @@ Alpine.data('project', () => ({
             image: '../dist/img/plantio-mockup.png',
             delay: 0,
             demo: '',
-            repo: 'https://github.com/mwahyudihd/smartio_app',
+            repo: 'https://github.com/mwahyudihd/plantio_app',
             desc: 'PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college',
             mobile: true,
             web: false,
@@ -116,7 +116,7 @@ Alpine.data('project', () => ({
             icon: ['https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000', 'https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000'],
             desc: 'PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college',
             demo: '',
-            repo: 'https://github.com/mwahyudihd/smartio_app',
+            repo: 'https://github.com/mwahyudihd/plantio_app',
             poster: '../dist/img/plantio-mockup.png'
         },
         {
