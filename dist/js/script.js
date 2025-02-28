@@ -19800,13 +19800,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   module_default.store("darkMode", {
     dark: false,
     init() {
-      const darkModePreference = localStorage.getItem("darkMode");
-      darkModePreference === "dark" && (this.dark = true) || darkModePreference === "light" && (this.dark = false);
+      const darkModePreference = localStorage.getItem("theme");
+      (darkModePreference === "dark" && (this.dark = true) || darkModePreference === "light" && (this.dark = false)) && (this.dark = window.matchMedia("(prefers-color-scheme: dark)").matches);
       this.updateDocumentClass();
     },
     toggleMode() {
       this.dark = !this.dark;
-      localStorage.setItem("darkMode", this.dark ? "dark" : "light");
+      localStorage.setItem("theme", this.dark ? "dark" : "light");
       this.updateDocumentClass();
     },
     updateDocumentClass() {
@@ -19835,6 +19835,18 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   module_default.data("project", () => ({
     recently: [
       {
+        title: "PlantIO App",
+        image: "../dist/img/plantio-mockup.png",
+        delay: 0,
+        demo: "",
+        repo: "https://github.com/mwahyudihd/smartio_app",
+        desc: "PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college",
+        mobile: true,
+        web: false,
+        api: false,
+        desktop: false
+      },
+      {
         title: "Todo App",
         image: "../dist/img/todo-app.png",
         delay: 0,
@@ -19857,21 +19869,17 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         web: true,
         api: false,
         desktop: false
-      },
-      {
-        title: "Fotocopy App (Point of Sale)",
-        image: "../dist/img/fotocopy-app.png",
-        delay: 600,
-        demo: "",
-        repo: "https://github.com/mwahyudihd/fotocopy-app2",
-        desc: "This application is developed using Flutter, providing a seamless and engaging user experience.",
-        mobile: true,
-        web: false,
-        api: false,
-        desktop: false
       }
     ],
     data: [
+      {
+        title: "PlantIO \u2013 Smart IoT Mobile App for Plant Monitoring and Watering Automation",
+        icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000"],
+        desc: "PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college",
+        demo: "",
+        repo: "https://github.com/mwahyudihd/smartio_app",
+        poster: "../dist/img/plantio-mockup.png"
+      },
       {
         title: "Todo App",
         icon: ["https://cdn.worldvectorlogo.com/logos/alpinejs-2.svg", "https://www.chartjs.org/img/chartjs-logo.svg", "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000"],
@@ -19950,29 +19958,26 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     },
     setPage(index2) {
       this.currentPage = index2;
-      this.$nextTick(() => this.set3D());
     },
     prevPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
-        this.$nextTick(() => this.set3D());
       }
     },
     nextPage() {
       if (this.currentPage < this.totalPage) {
         this.currentPage++;
-        this.$nextTick(() => this.set3D());
       }
-    },
-    init() {
-      this.$nextTick(() => this.set3D());
-    },
-    set3D() {
-      import_vanilla_tilt.default.init(document.querySelectorAll(".card-project"), {
-        max: 25,
-        speed: 400
-      });
     }
+    // init(){
+    //     this.$nextTick(() => this.set3D());
+    // },
+    // set3D(){
+    //     VanillaTilt.init(document.querySelectorAll('.card-project'), {
+    //         max: 25,
+    // 	    speed: 400
+    //     });
+    // }
   }));
   es_default.init({ publicKey: "cFxuzO7Yg5fsz4nLv" });
   module_default.data("msg", () => ({
@@ -20264,17 +20269,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       {
         image: "https://img.icons8.com/?size=100&id=EPbEfEa7o8CB&format=png&color=000000",
         delay: 1500
+      },
+      {
+        image: "https://img.icons8.com/?size=100&id=38561&format=png&color=000000",
+        delay: 1600
       }
     ],
     skillAssets: [
-      {
-        image: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000",
-        delay: 100
-      },
-      {
-        image: "https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000",
-        delay: 200
-      },
       {
         image: "https://img.icons8.com/?size=100&id=108784&format=png&color=000000",
         delay: 300
@@ -20302,37 +20303,14 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         labels: [
           "Debuging",
           "Syntax",
-          "Design",
           "Frameworks",
           "Basic",
           "Most used"
         ],
         datasets: [
           {
-            label: "HTML",
-            data: [80, 85, 90, 0, 95, 95],
-            fill: true,
-            backgroundColor: "rgba(255, 128, 0, 0.5)",
-            borderColor: "rgb(255, 128, 0)",
-            pointBackgroundColor: "rgb(255, 255, 255)",
-            pointBorderColor: "#FF9933",
-            pointHoverBackgroundColor: "#FF9933",
-            pointHoverBorderColor: "rgb(255, 99, 132)"
-          },
-          {
-            label: "CSS",
-            data: [75, 80, 75, 50, 90, 95],
-            fill: true,
-            backgroundColor: "rgba(54, 162, 235, 0.5)",
-            borderColor: "rgb(102, 178, 255)",
-            pointBackgroundColor: "rgb(54, 162, 235)",
-            pointBorderColor: "#fff",
-            pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgb(54, 162, 235)"
-          },
-          {
             label: "JavaScript",
-            data: [75, 80, 65, 65, 90, 95],
+            data: [75, 80, 65, 90, 95],
             fill: true,
             backgroundColor: "rgba(25, 25, 0, 0.5)",
             borderColor: "rgb(255, 255, 0)",
@@ -20343,7 +20321,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           },
           {
             label: "PHP",
-            data: [70, 80, 50, 20, 90, 50],
+            data: [70, 80, 20, 90, 50],
             fill: true,
             backgroundColor: "rgba(0, 0, 235, 0.5)",
             borderColor: "rgb(54, 162, 235)",
@@ -20354,7 +20332,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           },
           {
             label: "Dart",
-            data: [65, 75, 70, 70, 80, 70],
+            data: [65, 75, 70, 80, 70],
             fill: true,
             backgroundColor: "rgba(51, 153, 255, 0.5)",
             borderColor: "rgb(51, 51, 255)",
@@ -20365,7 +20343,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           },
           {
             label: "Python",
-            data: [40, 70, 10, 0, 50, 20],
+            data: [40, 70, 50, 50, 20],
             fill: true,
             backgroundColor: "rgba(255, 255, 0, 0.5)",
             borderColor: "rgb(153, 51, 255)",
@@ -20376,7 +20354,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
           },
           {
             label: "C#",
-            data: [28, 50, 20, 10, 50, 10],
+            data: [28, 50, 10, 50, 10],
             fill: true,
             backgroundColor: "rgba(255, 153, 153, 0.5)",
             borderColor: "rgb(255, 100, 100)",
