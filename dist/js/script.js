@@ -19936,7 +19936,6 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         repo: "https://github.com/mwahyudihd/debter",
         poster: "../dist/gif/debter-app.gif"
       }
-      // ,
       // {
       //     title: '',
       //     icon: [],
