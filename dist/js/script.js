@@ -19835,6 +19835,30 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   module_default.data("project", () => ({
     recently: [
       {
+        title: "UniHub - Ap[",
+        image: "../dist/img/unihub-app.png",
+        delay: 0,
+        demo: "",
+        repo: "",
+        desc: "Mobile application designed to facilitate communication and collaboration among student organizations. It provides features for sharing information with Generative AI integration for content generation, membership management, and finance management.",
+        mobile: true,
+        web: true,
+        api: false,
+        desktop: false
+      },
+      {
+        title: "Siapguna Mobile",
+        image: "../dist/img/siapguna-mobile.png",
+        delay: 0,
+        demo: "",
+        repo: "",
+        desc: "Siapguna mobile is a mobile application designed to support the Santri Siap Guna program at LPM DT Peduli.",
+        mobile: true,
+        web: false,
+        api: false,
+        desktop: false
+      },
+      {
         title: "PlantIO App",
         image: "../dist/img/plantio-mockup.png",
         delay: 0,
@@ -19845,33 +19869,25 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         web: false,
         api: false,
         desktop: false
-      },
-      {
-        title: "Todo App",
-        image: "../dist/img/todo-app.png",
-        delay: 0,
-        demo: "https://mwahyudihd.github.io/todo-app/",
-        repo: "https://github.com/mwahyudihd/todo-app",
-        desc: "A simple and responsive to-do list application built using Tailwind CSS and Alpine.js. This project is designed to help you manage and organize your daily tasks efficiently.",
-        mobile: false,
-        web: true,
-        api: false,
-        desktop: false
-      },
-      {
-        title: "debtwriter App",
-        image: "../dist/img/debtwriter-ci-poster.png",
-        delay: 300,
-        demo: "",
-        repo: "https://github.com/mwahyudihd/debtwriter-app",
-        desc: "This project is a web application for recording personal debts and notes.",
-        mobile: false,
-        web: true,
-        api: false,
-        desktop: false
       }
     ],
     data: [
+      {
+        title: "Unihub \u2013 A Platform for Student Organizations",
+        icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000", "https://img.icons8.com/?size=100&id=rnK88i9FvAFO&format=png&color=000000"],
+        desc: "UniHub is a mobile application designed to facilitate communication and collaboration among student organizations. It provides features for sharing information with Generative AI integration for content generation, membership menagement, and finance management. This project was created for assignment project from college.",
+        demo: "",
+        repo: "",
+        poster: "../dist/img/unihub-app.png"
+      },
+      {
+        title: "SantriSiapMobile - Mobile App for Santri Siap Guna Program",
+        icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000", "https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=000000"],
+        desc: "siapguna mobile is a mobile application designed to support the Santri Siap Guna program. It provides features for students to access educational resources, track their progress, and engage with the program effectively. This project was created by internship program at Lembaga Pengabdian Masyarakat (LPM) Darut Tauhid Peduli (2.5 month).",
+        demo: "",
+        repo: "",
+        poster: "../dist/img/siapguna-mobile.png"
+      },
       {
         title: "PlantIO \u2013 Smart IoT Mobile App for Plant Monitoring and Watering Automation",
         icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000"],
@@ -19910,7 +19926,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         desc: "This API was created as a beckend project of the Fotocopy app (Flutter mobile).",
         demo: "https://wahyudi.barudakkoding.com/fotocopy-api/public/produk/",
         repo: "https://github.com/mwahyudihd/fotocopy-api",
-        poster: "../dist/img/api-fotocopy.png"
+        poster: ""
       },
       {
         title: "Web app debtwriter",
