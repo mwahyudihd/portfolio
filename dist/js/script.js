@@ -19849,7 +19849,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       {
         title: "Siapguna Mobile",
         image: "../dist/img/siapguna-mobile.png",
-        delay: 0,
+        delay: 100,
         demo: "",
         repo: "",
         desc: "Siapguna mobile is a mobile application designed to support the Santri Siap Guna program at LPM DT Peduli.",
@@ -19861,7 +19861,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       {
         title: "PlantIO App",
         image: "../dist/img/plantio-mockup.png",
-        delay: 0,
+        delay: 300,
         demo: "",
         repo: "https://github.com/mwahyudihd/plantio_app",
         desc: "PlantIO is a mobile application that helps users to monitor and control the growth of plants using IoT technology. This project was created for assignment project from college",
