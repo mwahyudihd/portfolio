@@ -19842,7 +19842,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         repo: "",
         desc: "Mobile application designed to facilitate communication and collaboration among student organizations. It provides features for sharing information with Generative AI integration for content generation, membership management, and finance management.",
         mobile: true,
-        web: true,
+        web: false,
         api: false,
         desktop: false
       },
