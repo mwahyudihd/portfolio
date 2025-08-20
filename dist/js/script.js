@@ -19835,7 +19835,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   module_default.data("project", () => ({
     recently: [
       {
-        title: "UniHub - Ap[",
+        title: "UniHub - App",
         image: "../dist/img/unihub-app.png",
         delay: 0,
         demo: "",
@@ -19883,7 +19883,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       {
         title: "SantriSiapMobile - Mobile App for Santri Siap Guna Program",
         icon: ["https://img.icons8.com/?size=100&id=7I3BjCqe9rjG&format=png&color=000000", "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000", "https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=000000"],
-        desc: "siapguna mobile is a mobile application designed to support the Santri Siap Guna program. It provides features for students to access educational resources, track their progress, and engage with the program effectively. This project was created by internship program at Lembaga Pengabdian Masyarakat (LPM) Darut Tauhid Peduli (2.5 month).",
+        desc: "siapguna mobile is a mobile application designed to support the Santri Siap Guna program. It provides features for students to access educational resources, track their progress, and engage with the program effectively with local database for quran. This project was created by internship program at Lembaga Pengabdian Masyarakat (LPM) Darut Tauhid Peduli (2.5 month).",
         demo: "",
         repo: "",
         poster: "../dist/img/siapguna-mobile.png"
