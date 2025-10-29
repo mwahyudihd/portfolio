@@ -568,7 +568,7 @@ Alpine.data('skills',() => ({
             delay: 1600
         },
         {
-            image: 'https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=93BFC7',
+            image: 'https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=1A2A4F',
             delay: 1600
         }
     ],
