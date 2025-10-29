@@ -554,6 +554,18 @@ Alpine.data('skills',() => ({
         {
             image: 'https://img.icons8.com/?size=100&id=38561&format=png&color=000000',
             delay: 1600
+        },
+        {
+            image: 'https://img.icons8.com/?size=100&id=hUvxmdu7Rloj&format=png&color=000000',
+            delay: 1600
+        },
+        {
+            image: 'https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000',
+            delay: 1600
+        },
+        {
+            image: 'https://img.icons8.com/?size=100&id=GaRO0SragvjM&format=png&color=000000',
+            delay: 1600
         }
     ],
     skillAssets: [
