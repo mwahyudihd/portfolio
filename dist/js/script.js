@@ -20294,7 +20294,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
         delay: 1600
       },
       {
-        image: "https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000",
+        image: "https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=DD0303",
         delay: 1600
       },
       {
