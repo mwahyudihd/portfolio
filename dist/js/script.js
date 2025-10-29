@@ -20300,6 +20300,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       {
         image: "https://img.icons8.com/?size=100&id=GaRO0SragvjM&format=png&color=000000",
         delay: 1600
+      },
+      {
+        image: "https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=93BFC7",
+        delay: 1600
       }
     ],
     skillAssets: [
@@ -20321,10 +20325,6 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       },
       {
         image: "https://img.icons8.com/?size=100&id=55251&format=png&color=000000",
-        delay: 700
-      },
-      {
-        image: "https://img.icons8.com/?size=100&id=VMRAbKfEzssG&format=png&color=000000",
         delay: 700
       }
     ],
