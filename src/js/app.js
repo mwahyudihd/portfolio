@@ -61,7 +61,7 @@ Alpine.data('heroIndex', () => ({
     },
     typing(){
         new Typed('#typed-list', {
-            strings: ['<span class="dark:text-blue-300">Wahyudi</span>;','<span class="dark:text-blue-300">Fullstack</span> Developer;', '<span class="dark:text-blue-300">Flutter</span> development enthusiast;', '<span class="dark:text-blue-300">Informatic student</span>;'],
+            strings: ['<span class="dark:text-blue-300">Wahyudi</span>;','<span class="dark:text-blue-300">Fullstack</span> Developer;', '<span class="dark:text-blue-300">Flutter</span> developer;', '<span class="dark:text-blue-300"> a Graduate of Computer Science</span>;'],
             loop: true,
             autoInsertCss: true,
             backDelay: 1500,
